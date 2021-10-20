@@ -1,0 +1,18 @@
+.dropdown-list-item {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.dropdown-list-item:hover {
+  background-color: rgb(207, 207, 207);
+}
+
+.dropdown-list-item.selected {
+  background-color: #ea6f50;
+}
