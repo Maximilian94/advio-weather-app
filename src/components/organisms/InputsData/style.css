@@ -1,5 +1,6 @@
 .inputs-data {
   display: flex;
-  background-color: #465a65;
+  background-color: #607d8b;
   justify-content: space-evenly;
+  padding: 2%;
 }
