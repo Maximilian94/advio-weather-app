@@ -7,7 +7,7 @@ import arrowDown from '../../../images/arrow-down-sign-to-navigate.png';
 
 const DropDown: React.FC = () => {
   const [listVisible, setListVisible] = useState(false);
-  const options = ['Lisbon', 'teste 2', 'TESTE 3'];
+  const options = ['Lisbon', 'New York', 'London'];
   const [selectedCity, setSelectedCity] = useState(options[0]);
 
   const selectCity = (city: string) => {
