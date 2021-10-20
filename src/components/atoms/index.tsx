@@ -1,2 +1,1 @@
-//  Lets Code
-export {};
+export { default as PageTitle } from './PageTitle';
