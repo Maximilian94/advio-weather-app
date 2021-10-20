@@ -1,0 +1,6 @@
+.sunrise-sunset {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  padding: 2%;
+}

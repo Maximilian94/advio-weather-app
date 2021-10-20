@@ -1,0 +1,6 @@
+.main-page {
+  background-color: #607d8b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
