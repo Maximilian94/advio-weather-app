@@ -1,4 +1,4 @@
-export interface weatherResponse {
+export interface WeatherResponse {
   coord: {
     lon: number;
     lat: number;
@@ -16,8 +16,6 @@ export interface weatherResponse {
     temp: number;
     pressure: number;
     humidity: number;
-    temp_min: number;
-    temp_max: number;
   };
   visibility: number;
   wind: {

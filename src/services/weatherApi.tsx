@@ -1,7 +1,7 @@
 import { Api } from '../providers';
-import { weatherResponse } from '../interfaces/types';
+import { WeatherResponse } from '../interfaces/types';
 
-const getWeatherByLocalName = () => Api.get<weatherResponse>('');
+const getWeatherByLocalName = () => Api.get<WeatherResponse>('');
 
 export const WeatherAPI = {
   getWeatherByLocalName,
