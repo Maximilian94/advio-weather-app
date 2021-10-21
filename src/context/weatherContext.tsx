@@ -12,16 +12,21 @@ import { WeatherResponse } from '../interfaces/types';
 
 type ContextValue = {
   weather: WeatherResponse | undefined;
+  isTempUnitCelsius: boolean;
+  setIsTempUnitCelsius: Function;
 };
 
 const DEFAULT_VALUE = {
   weather: undefined,
+  isTempUnitCelsius: true,
+  setIsTempUnitCelsius: () => {},
 };
 
 export const WeatherContext = createContext<ContextValue>(DEFAULT_VALUE);
 
 export function WeatherProvider({ children }: { children: ReactNode }) {
   const [weather, setWeather] = useState<WeatherResponse>();
+  const [isTempUnitCelsius, setIsTempUnitCelsius] = useState(true);
 
   const updateWeather = async () => {
     const { status, data } = await WeatherAPI.getWeatherByLocalName();
@@ -29,7 +34,7 @@ export function WeatherProvider({ children }: { children: ReactNode }) {
     setWeather(data);
   };
 
-  const context = { weather };
+  const context = { weather, isTempUnitCelsius, setIsTempUnitCelsius };
 
   useEffect(() => {
     updateWeather();
