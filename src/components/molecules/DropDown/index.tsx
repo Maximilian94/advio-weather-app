@@ -27,13 +27,14 @@ const DropDown: React.FC = () => {
       <button
         type="button"
         className="dropdown-selected"
+        data-cy="dropdown-selected"
         onClick={() => setListVisible(!listVisible)}
       >
         <span>{selectedCity}</span>
         <img src={arrowDown} alt="arrow down" />
       </button>
       {listVisible ? (
-        <div className="dropdown-list">
+        <div className="dropdown-list" data-cy="dropdown-list">
           {options.map(title => (
             <DropDownOption
               title={title}
