@@ -37,4 +37,5 @@ export interface WeatherResponse {
   id: number;
   name: string;
   cod: number;
+  timezone: number;
 }

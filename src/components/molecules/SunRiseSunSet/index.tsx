@@ -15,10 +15,11 @@ const Main: React.FC = () => {
 
   const convertUnixTimeToTime = (unixTime: number) => {
     if (!weather) return 'Loading';
-    const utc = new Date(unixTime * 1000);
-    const hours = utc.getUTCHours();
-    const min = utc.getUTCMinutes();
-    return `${zeroLeftIfNeeded(hours, 2)}:${min}`;
+    const date = new Date(unixTime * 1000);
+    const hoursShiftToLocalTime = weather.timezone / 60 / 60;
+    const hours = date.getUTCHours() + hoursShiftToLocalTime;
+    const min = date.getMinutes();
+    return `${zeroLeftIfNeeded(hours, 2)}:${zeroLeftIfNeeded(min, 2)}`;
   };
 
   return (
