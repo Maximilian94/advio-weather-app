@@ -5,14 +5,18 @@ import './App.css';
 import { Main } from './pages';
 import { Header } from './components/organisms';
 
+import { WeatherProvider } from './context/weatherContext';
+
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" component={Main} />
-      </Switch>
-    </Router>
+    <WeatherProvider>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" component={Main} />
+        </Switch>
+      </Router>
+    </WeatherProvider>
   );
 }
 

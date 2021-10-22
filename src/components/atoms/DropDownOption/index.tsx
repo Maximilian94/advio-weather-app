@@ -17,6 +17,7 @@ const DropDownOption: React.FC<TitleProps> = ({
       type="button"
       className={`dropdown-list-item ${isSelected ? 'selected' : null}`}
       onClick={() => onClick(title)}
+      data-cy={`dropdown-option-${title}`}
     >
       {title}
     </button>
