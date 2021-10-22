@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
+
+import { useWeather } from '../../../context/weatherContext';
 
 import { DropDownOption } from '../../atoms';
 
@@ -7,13 +9,18 @@ import arrowDown from '../../../images/arrow-down-sign-to-navigate.png';
 
 const DropDown: React.FC = () => {
   const [listVisible, setListVisible] = useState(false);
-  const options = ['Lisbon', 'New York', 'London'];
+  const options = ['Lisbon', 'New York', 'London', 'Sao Paulo'];
   const [selectedCity, setSelectedCity] = useState(options[0]);
+  const { updateWeather } = useWeather();
 
   const selectCity = (city: string) => {
     setSelectedCity(city);
     setListVisible(false);
   };
+
+  useEffect(() => {
+    updateWeather(selectedCity);
+  }, [selectedCity]);
 
   return (
     <div className="dropdown">
